@@ -5,12 +5,15 @@ from sklearn.metrics import mean_squared_error
 
 diabetes = datasets.load_diabetes()
 
-diabetes_X = diabetes.data[:, np.newaxis, 2]
-diabetes_X_train = diabetes_X[:-20]
-diabetes_X_test = diabetes_X[-20:]
+# diabetes_X = diabetes.data[:, np.newaxis, 2]
 
-diabetes_y_train = diabetes.target[:-20]
-diabetes_y_test = diabetes.target[-20:]
+diabetes_X = np.array([[1], [2], [3]])
+
+diabetes_X_train = diabetes_X#[:-20]
+diabetes_X_test = diabetes_X#[-20:]
+
+diabetes_y_train = np.array([3, 2, 4])
+diabetes_y_test = np.array([3, 2, 4])
 
 model = linear_model.LinearRegression()
 model.fit(diabetes_X_train, diabetes_y_train)
